@@ -1103,7 +1103,7 @@ strong { color: var(--text); }
     <div class="container">
       <div class="eyebrow reveal">Live från Svensk Fotboll</div>
       <h2 class="section-title reveal">Matcher & Tabell</h2>
-      <p class="section-lead reveal">Aktuell tabell och kommande matcher hämtas direkt från Svenska Fotbollförbundet. Innehållet är alltid uppdaterat.</p>
+      <p class="section-lead reveal">Kommande matcher och senaste resultat hämtas live från Svenska Fotbollförbundet. Innehållet är alltid uppdaterat.</p>
 
       <div class="side-card reveal" style="margin-top:40px; text-align:center; padding:48px 24px;">
         <div style="width:64px;height:64px;border-radius:16px;background:rgba(192,0,0,0.08);display:grid;place-items:center;margin:0 auto 20px;color:var(--red);">
@@ -1115,10 +1115,13 @@ strong { color: var(--text); }
           <a href="https://www.svenskfotboll.se/widgets/" target="_blank" rel="noopener" class="nc-link">svenskfotboll.se/widgets</a>,
           sök fram Löftadalens IF, generera koden och klistra in den här. Tills dess visas statisk exempeldata ovan.
         </p>
-        <div id="svff-widget-placeholder" style="margin-top:20px;min-height:120px;border:2px dashed var(--border-strong);border-radius:var(--radius-sm);display:grid;place-items:center;color:var(--text-muted);font-size:0.9rem;">
-          <!-- Klistra in SvFF-widgetkoden här -->
-          <span>Widget-plats (klistra in kod från svenskfotboll.se/widgets)</span>
+        <div id="svff-widget" style="margin-top:24px;">
+          <!-- SvFF widget: Löftadalens IF – kommande matcher & resultat -->
+          <script src="https://www.svenskfotboll.se/widget.aspx?scr=teamresult&flid=30459&b1=%23c00000&f1=%23FFFFFF&b2=%237a0000&f2=%23FFFFFF&b4=%23FFFFFF&f3=%231a1f2e&b3=%23f7f8fc&bo=%23e5e7eb"></script>
         </div>
+        <p style="margin-top:16px;font-size:0.8rem;color:var(--text-muted);text-align:center;">
+          Källa: <a href="https://www.svenskfotboll.se" target="_blank" rel="noopener" class="nc-link">svenskfotboll.se</a>
+        </p>
       </div>
     </div>
   </section>
