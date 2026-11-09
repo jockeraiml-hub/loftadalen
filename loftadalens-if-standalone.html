@@ -170,7 +170,7 @@ strong { color: var(--text); }
   background: radial-gradient(circle, rgba(192,0,0,0.10), transparent 60%);
   filter: blur(40px); pointer-events: none;
 }
-.hero .container { position: relative; z-index: 2; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 60px; align-items: center; padding-top: 40px; padding-bottom: 80px; }
+.hero .container { position: relative; z-index: 2; display: grid; grid-template-columns: 1fr; gap: 40px; align-items: center; padding-top: 40px; padding-bottom: 80px; max-width: 820px; }
 .hero-content { max-width: 720px; }
 .hero-eyebrow {
   display: inline-flex; align-items: center; gap: 12px;
@@ -573,37 +573,7 @@ strong { color: var(--text); }
       </div>
 
       <!-- Match card -->
-      <div class="match-card reveal">
-        <div class="mc-head">
-          <div class="mc-label">Nästa match</div>
-          <div class="mc-round">Omgång 8 · Hemma</div>
-        </div>
-        <div class="match-teams">
-          <div class="match-team home">
-            <div class="crest">LIF</div>
-            <div class="tname">Löftadalens IF</div>
-            <div class="tmeta">Hemmalag</div>
-          </div>
-          <div class="match-vs">VS</div>
-          <div class="match-team">
-            <div class="crest">TF</div>
-            <div class="tname">Trönninge BK</div>
-            <div class="tmeta">Bortalag</div>
-          </div>
-        </div>
-        <div class="match-info">
-          <div class="row"><span class="k">Datum</span><span class="v" id="match-date">Lördag 24 maj 2025</span></div>
-          <div class="row"><span class="k">Avspark</span><span class="v">14:00</span></div>
-          <div class="row"><span class="k">Arena</span><span class="v">Löftavallen, Frillesås</span></div>
-          <div class="row"><span class="k">Serie</span><span class="v">Division 5 Norra Halland</span></div>
-        </div>
-        <div class="countdown" id="countdown">
-          <div class="cd"><div class="n" id="cd-d">--</div><div class="l">Dagar</div></div>
-          <div class="cd"><div class="n" id="cd-h">--</div><div class="l">Timmar</div></div>
-          <div class="cd"><div class="n" id="cd-m">--</div><div class="l">Min</div></div>
-          <div class="cd"><div class="n" id="cd-s">--</div><div class="l">Sek</div></div>
-        </div>
-      </div>
+      <!-- Nästa match-kort borttaget (exempeldata). SvFF-widgeten i sektionen "Serie" visar kommande matcher automatiskt. -->
     </div>
   </section>
 
@@ -1257,21 +1227,25 @@ if (matchDateEl) {
   matchDateEl.textContent = svDays[target.getDay()] + ' ' + target.getDate() + ' ' + svMonths[target.getMonth()] + ' ' + target.getFullYear();
 }
 
-function tick() {
-  const now = new Date();
-  let diff = target - now;
-  if (diff < 0) diff = 0;
-  const d = Math.floor(diff / 86400000);
-  const h = Math.floor((diff % 86400000) / 3600000);
-  const m = Math.floor((diff % 3600000) / 60000);
-  const s = Math.floor((diff % 60000) / 1000);
-  document.getElementById('cd-d').textContent = String(d).padStart(2,'0');
-  document.getElementById('cd-h').textContent = String(h).padStart(2,'0');
-  document.getElementById('cd-m').textContent = String(m).padStart(2,'0');
-  document.getElementById('cd-s').textContent = String(s).padStart(2,'0');
+// Countdown removed (hero match card no longer shown). Keep code guarded in case re-added.
+const cdD = document.getElementById('cd-d');
+if (cdD) {
+  function tick() {
+    const now = new Date();
+    let diff = target - now;
+    if (diff < 0) diff = 0;
+    const d = Math.floor(diff / 86400000);
+    const h = Math.floor((diff % 86400000) / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+    document.getElementById('cd-d').textContent = String(d).padStart(2,'0');
+    document.getElementById('cd-h').textContent = String(h).padStart(2,'0');
+    document.getElementById('cd-m').textContent = String(m).padStart(2,'0');
+    document.getElementById('cd-s').textContent = String(s).padStart(2,'0');
+  }
+  tick();
+  setInterval(tick, 1000);
 }
-tick();
-setInterval(tick, 1000);
 
 // ---- Back to top ----
 const btt = document.getElementById('backToTop');

@@ -159,7 +159,7 @@ strong { color: var(--text); }
   background: radial-gradient(circle, rgba(192,0,0,0.10), transparent 60%);
   filter: blur(40px); pointer-events: none;
 }
-.hero .container { position: relative; z-index: 2; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 60px; align-items: center; padding-top: 40px; padding-bottom: 80px; }
+.hero .container { position: relative; z-index: 2; display: grid; grid-template-columns: 1fr; gap: 40px; align-items: center; padding-top: 40px; padding-bottom: 80px; max-width: 820px; }
 .hero-content { max-width: 720px; }
 .hero-eyebrow {
   display: inline-flex; align-items: center; gap: 12px;
