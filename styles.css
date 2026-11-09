@@ -392,6 +392,12 @@ strong { color: var(--text); }
 .footer .logo-text .name { color: #fff; }
 .footer .logo-text .tag { color: #8a94a6; }
 
+/* ---------- Widget grid ---------- */
+.widget-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+@media (max-width: 768px) {
+  .widget-grid-2 { grid-template-columns: 1fr; }
+}
+
 /* ---------- Utility ---------- */
 .text-green { color: var(--red); }
 .mt-4 { margin-top: 16px; }

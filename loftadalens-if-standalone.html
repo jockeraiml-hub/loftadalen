@@ -403,6 +403,12 @@ strong { color: var(--text); }
 .footer .logo-text .name { color: #fff; }
 .footer .logo-text .tag { color: #8a94a6; }
 
+/* ---------- Widget grid ---------- */
+.widget-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+@media (max-width: 768px) {
+  .widget-grid-2 { grid-template-columns: 1fr; }
+}
+
 /* ---------- Utility ---------- */
 .text-green { color: var(--red); }
 .mt-4 { margin-top: 16px; }
@@ -1115,12 +1121,28 @@ strong { color: var(--text); }
           <a href="https://www.svenskfotboll.se/widgets/" target="_blank" rel="noopener" class="nc-link">svenskfotboll.se/widgets</a>,
           sök fram Löftadalens IF, generera koden och klistra in den här. Tills dess visas statisk exempeldata ovan.
         </p>
-        <div id="svff-widget" style="margin-top:24px;">
-          <!-- SvFF widget: Löftadalens IF – kommande matcher & resultat -->
-          <script src="https://www.svenskfotboll.se/widget.aspx?scr=teamresult&flid=30459&b1=%23c00000&f1=%23FFFFFF&b2=%237a0000&f2=%23FFFFFF&b4=%23FFFFFF&f3=%231a1f2e&b3=%23f7f8fc&bo=%23e5e7eb"></script>
+        <div id="svff-widgets" style="margin-top:24px;display:grid;gap:24px;">
+          <!-- SvFF widget: Tabell (Division 5 Norra Halland) -->
+          <div class="side-card" style="padding:16px;">
+            <h4 style="margin-bottom:12px;color:var(--red);">Tabell – Division 5 Norra Halland</h4>
+            <script src="https://www.svenskfotboll.se/widget.aspx?scr=tablesmall&ftid=133433&b1=%23c00000&f1=%23FFFFFF&b2=%237a0000&f2=%23FFFFFF&b4=%23FFFFFF&f3=%231a1f2e&b3=%23f7f8fc&bo=%23e5e7eb"></script>
+          </div>
+
+          <div class="widget-grid-2">
+            <!-- SvFF widget: Kommande matcher -->
+            <div class="side-card" style="padding:16px;">
+              <h4 style="margin-bottom:12px;color:var(--red);">Kommande matcher (8 st)</h4>
+              <script src="https://www.svenskfotboll.se/widget.aspx?scr=cominginleague&ftid=133433&b1=%23c00000&f1=%23FFFFFF&b2=%237a0000&f2=%23FFFFFF&b4=%23FFFFFF&f3=%231a1f2e&b3=%23f7f8fc&bo=%23e5e7eb&nbr=8"></script>
+            </div>
+            <!-- SvFF widget: Senaste resultat -->
+            <div class="side-card" style="padding:16px;">
+              <h4 style="margin-bottom:12px;color:var(--red);">Senaste resultat (8 st)</h4>
+              <script src="https://www.svenskfotboll.se/widget.aspx?scr=latestinleague&ftid=133433&b1=%23c00000&f1=%23FFFFFF&b2=%237a0000&f2=%23FFFFFF&b4=%23FFFFFF&f3=%231a1f2e&b3=%23f7f8fc&bo=%23e5e7eb&nbr=8"></script>
+            </div>
+          </div>
         </div>
         <p style="margin-top:16px;font-size:0.8rem;color:var(--text-muted);text-align:center;">
-          Källa: <a href="https://www.svenskfotboll.se" target="_blank" rel="noopener" class="nc-link">svenskfotboll.se</a>
+          Källa: <a href="https://www.svenskfotboll.se" target="_blank" rel="noopener" class="nc-link">svenskfotboll.se</a> · Division 5 Norra Halland
         </p>
       </div>
     </div>
